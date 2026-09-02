@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+
+float discount(float price, int rate)
+{
+    return price * rate / 100;
+}
+
+
+float discount(float price, int rate, int quantity)
+{
+    return (price * quantity) * rate / 100;
+}
+
+
+int main()
+{
+    float price;
+    int rate, quantity;
+
+
+    cout << "Enter price: ";
+    cin >> price;
+
+
+    cout << "Enter discount rate: ";
+    cin >> rate;
+
+
+    cout << "Discount = " << discount(price, rate) << endl;
+
+
+    cout << "Enter quantity: ";
+    cin >> quantity;
+
+
+    cout << "Total Discount = "
+         << discount(price, rate, quantity) << endl;
+
+
+    return 0;
+}
+
+OUTPUT
+
+Enter price: 2000
+Enter discount rate: 30
+Discount = 600
+Enter quantity: 1
+Total Discount = 600
