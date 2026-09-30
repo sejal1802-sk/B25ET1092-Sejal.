@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class String
+{
+    string name;
+
+public:
+    // Constructor
+    String()
+    {
+        name = "";
+        cout << "Constructor called." << endl;
+    }
+
+    // Accept student's name
+    void Accept()
+    {
+        cout << "Enter student's name: ";
+        getline(cin, name);
+    }
+
+    // Display student's name
+    void Display()
+    {
+        cout << "Student's name: " << name << endl;
+    }
+
+    // Destructor
+    ~String()
+    {
+        cout << "Destructor called." << endl;
+    }
+};
+
+int main()
+{
+    String s;
+
+    s.Accept();
+    s.Display();
+
+    return 0;
+}
