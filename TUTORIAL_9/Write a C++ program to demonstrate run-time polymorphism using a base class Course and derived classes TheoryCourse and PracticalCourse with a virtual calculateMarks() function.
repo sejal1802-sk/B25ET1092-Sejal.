@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+class Course
+{
+public:
+    virtual void calculateMarks()
+    {
+        cout << "Calculate Course Marks" << endl;
+    }
+};
+
+class TheoryCourse : public Course
+{
+public:
+    int marks;
+
+    void calculateMarks()
+    {
+        cout << "Enter Theory Marks: ";
+        cin >> marks;
+        cout << "Theory Marks: " << marks << endl;
+    }
+};
+
+class PracticalCourse : public Course
+{
+public:
+    int marks;
+
+    void calculateMarks()
+    {
+        cout << "Enter Practical Marks: ";
+        cin >> marks;
+        cout << "Practical Marks: " << marks << endl;
+    }
+};
+
+int main()
+{
+    Course *ptr;
+    TheoryCourse t;
+    PracticalCourse p;
+
+    ptr = &t;
+    ptr->calculateMarks();
+
+    ptr = &p;
+    ptr->calculateMarks();
+
+    return 0;
+}
+
+OUTPUT:
+Enter Theory Marks: 80
+Theory Marks: 80
+Enter Practical Marks: 90
+Practical Marks: 90
