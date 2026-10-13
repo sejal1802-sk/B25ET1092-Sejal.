@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+public:
+    int id;
+    string name;
+    float salary;
+
+    void getEmployee()
+    {
+        cout << "Enter Employee ID: ";
+        cin >> id;
+        cout << "Enter Employee Name: ";
+        cin >> name;
+        cout << "Enter Salary: ";
+        cin >> salary;
+    }
+};
+
+class Insurance
+{
+public:
+    float monthlyPremium;
+
+    void getInsurance()
+    {
+        cout << "Enter Monthly Insurance Premium: ";
+        cin >> monthlyPremium;
+    }
+};
+
+class EmployeeInsurance : public Employee, public Insurance
+{
+public:
+    void display()
+    {
+        cout << "\nEmployee ID: " << id;
+        cout << "\nEmployee Name: " << name;
+        cout << "\nSalary: " << salary;
+        cout << "\nAnnual Insurance Contribution: "
+             << monthlyPremium * 12 << endl;
+    }
+};
+
+int main()
+{
+    EmployeeInsurance e;
+
+    e.getEmployee();
+    e.getInsurance();
+    e.display();
+
+    return 0;
+}
+
+OUTPUT:
+Enter Employee ID: 101
+Enter Employee Name: Rahul
+Enter Salary: 30000
+Enter Monthly Insurance Premium: 1000
+
+Employee ID: 101
+Employee Name: Rahul
+Salary: 30000
+Annual Insurance Contribution: 12000
