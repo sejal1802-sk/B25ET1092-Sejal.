@@ -1,0 +1,47 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream source;
+    ofstream destination;
+    string sourceFile, destinationFile;
+
+    cout << "Enter source file name: ";
+    cin >> sourceFile;
+
+    cout << "Enter destination file name: ";
+    cin >> destinationFile;
+
+    source.open(sourceFile);
+
+    if (!source)
+    {
+        cout << "Error opening source file!" << endl;
+        return 1;
+    }
+
+    destination.open(destinationFile);
+
+    if (!destination)
+    {
+        cout << "Error opening destination file!" << endl;
+        return 1;
+    }
+
+    destination << source.rdbuf();
+
+    source.close();
+    destination.close();
+
+    cout << "File copied successfully." << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter source file name: source.txt
+Enter destination file name: copy.txt
+File copied successfully.
